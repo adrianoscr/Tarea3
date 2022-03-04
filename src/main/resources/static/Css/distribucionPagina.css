@@ -6,10 +6,8 @@ body {
     
 }
 
- 
-
 .header {
-    background-color: #EBC486;
+    background-color: #1852ED;
     height: 80px;
     position: fixed;
     top: 0;
@@ -23,7 +21,7 @@ body {
     left: 0%;
     height: 81%;
     width: 100%;
-    background-color: #E9CFC7;
+    background-color: white;
     color: black;
     overflow: auto;
 
@@ -37,7 +35,7 @@ body {
     width: 60%;
     position: absolute;
     box-sizing: border-box;
-    background-color: #E9CFC7;
+    background-color: whitesmoke;
     color: black;
     overflow: auto;
 
@@ -50,7 +48,7 @@ body {
     left: 0%;
     height: 7%;
     width: 100%;
-    background-color: #A18558;
+    background-color: #22BCE1;
     color: black;
     text-align: center;
 }
@@ -73,3 +71,13 @@ body {
     margin-top: 15px;
 
 }
+
+.fotos{
+    margin-left: 275px;
+    width: 525px;
+}
+
+#pieFotoServicioCliente{
+   text-align: center;
+}
+
