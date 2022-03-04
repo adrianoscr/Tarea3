@@ -1,0 +1,75 @@
+
+/*OFORMATO DE LETRA GENERAL PARA TODO EL CUERPO DE LA PÁGINA WEB*/
+body {
+    font-family: serif;
+    padding: 90px 20px 0;
+    
+}
+
+ 
+
+.header {
+    background-color: #EBC486;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.contenido{
+    position: absolute;
+    top:12%;
+    left: 0%;
+    height: 81%;
+    width: 100%;
+    background-color: #E9CFC7;
+    color: black;
+    overflow: auto;
+
+}
+
+.contenidoGeneral{
+
+    top:12%;
+    left: 20%;
+    height: 81%;
+    width: 60%;
+    position: absolute;
+    box-sizing: border-box;
+    background-color: #E9CFC7;
+    color: black;
+    overflow: auto;
+
+}
+
+
+.piePagina{
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    height: 7%;
+    width: 100%;
+    background-color: #A18558;
+    color: black;
+    text-align: center;
+}
+
+.titulos {
+    text-align:center;
+    font-size: 30px;
+}
+
+.subTitulos{
+    max-width: 700px;
+    margin-left: 200px;
+}
+
+.parrafos {
+    text-align: justify;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-size: 18px;
+    margin-top: 15px;
+
+}
