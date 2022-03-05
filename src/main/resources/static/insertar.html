@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Insertar producto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="Css/distribucionPagina.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+
+        <nav>
+
+        </nav>
+
+        <header class="header">
+
+            <p>Buenas................</p>
+
+        </header>
+
+
+        <div class="titulos">Tabla de Productos actuales</div>
+        <section class="contenidoGeneral">
+            <br>
+            <a th:href="@{/nuevoProducto}">Insertar nuevo producto</a>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div th:if="${productosDB != null and !productosDB.empty}">
+                <table id="centro" border="2">
+                    <tr>
+                        <td> Nombre </td>
+                        <td> Marca </td>
+                        <td> Descripcion </td>
+                        <td> Stock </td>
+                        <td> Descuento </td>
+                        <td> Precio </td>
+                    </tr>
+                    <tr th:each="item : ${productosDB}">
+                        <td th:text="${item.nombre}"></td>
+                        <td th:text="${item.marca}"></td>
+                        <td th:text="${item.descripcion}"></td>
+                        <td th:text="${item.stock}"></td>
+                        <td th:text="${item.descuento}"></td>
+                        <td th:text="${item.precio}"></td>
+                </table>
+            </div>
+
+
+        </section>
+
+
+        <footer class="piePagina">
+
+        </footer>
+
+
+    </body>
+</html>

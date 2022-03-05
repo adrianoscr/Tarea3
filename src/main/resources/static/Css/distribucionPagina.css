@@ -3,7 +3,7 @@
 body {
     font-family: serif;
     padding: 90px 20px 0;
-    
+
 }
 
 .header {
@@ -78,6 +78,13 @@ body {
 }
 
 #pieFotoServicioCliente{
-   text-align: center;
+    text-align: center;
+}
+
+
+#centro {
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
 }
 
