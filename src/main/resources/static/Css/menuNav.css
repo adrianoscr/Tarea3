@@ -1,0 +1,68 @@
+
+/*SELECTOR UNIVERSAL*/
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*ORDENAMOS LAS OPCIONES DEL MENU DE NAVEGACION*/
+.nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+ 
+/*DAMOS DISENNO LAS OPCIONES INTERNAS DEL MENU DE NAVEGACION*/
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+
+ 
+/*AL TITULO DE LA PÁGINA LE DAMOS UN FORMATO MÁS ATRACTIVO*/
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 80px;
+}
+
+/*DAMOS FORMATO AL LINK DEL MENU DE NAVEGACION*/
+.logo-link {
+    color: white;
+    text-decoration: none;
+}
+
+ 
+/*ORDENAMOS LAS OPCIONES DEL MENU DE NAVEGACION PARA QUE ESTEN A LA PAR A UNA DISTANCIA ESPECIFICA*/
+.nav-menu {
+    display: flex;
+    margin-left: 40px;
+    list-style: none;
+}
+
+ 
+/*DEFINIMOS EL TAMANNO DE LA LETRA, ASÍ COMO EL ALTO Y EL ANCHO MÁXIMO DE ESTA MISMA*/
+.nav-menu-item {
+    font-size: 20px;
+    margin: 0 10px;
+    line-height: 80px;
+    width: max-content;
+}
+
+ 
+/*ANIMACION SENSILLA DE ESTAR ENCIMA DE UNA DE LAS OPCIONES DEL MENU DE NAVEGACION*/
+.nav-menu-item:hover {
+    background-color: #18EDA2;
+    transition: 0.5s;
+}
+
+ 
+/*DAMOS FORMATO AL LINK DEL MENU DE NAVEGACION*/
+.nav-menu-link {
+    padding: 8px 12px;
+    border-radius: 4px;
+}

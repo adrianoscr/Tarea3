@@ -1,12 +1,45 @@
+<!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
+
     <head>
-        <title>TODO supply a title</title>
+        <title>Plantilla</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="Css/menuNav.css" rel="stylesheet" type="text/css"/>
+        <link href="Css/distribucionPagina.css" rel="stylesheet" type="text/css"/>
         
+
     </head>
+
     <body>
-        
+
+        <header class="header" th:fragment="header">
+
+            <nav class="nav">
+
+                <a class="logo-link logo" th:href="@{/}">FideTech</a>
+
+                <ul class="nav-menu">
+
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" th:href="@{/}">INICIO</a></li>  
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="insertar.html">Listar</a></li>     
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="insertar.html">Insertar</a></li>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="contactenos.html">Contáctenos</a>
+
+                </ul>
+
+            </nav>
+
+        </header>
+
+
+
+
+        <footer class="piePagina" th:fragment="footer">
+            <br>
+            &COPY; Derechos Reservados 2022
+        </footer>
+
     </body>
 </html>
