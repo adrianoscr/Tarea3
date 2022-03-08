@@ -24,5 +24,11 @@ public class IndexController {
         return "contactenos";
     }
 
+    //SE INDICA QUE SE USARÁ EL TAMPLATE CON ESE NOMBRE
+    @GetMapping("/insertar")
+    public String insertar(Model model) {
+        log.info("Arquitectura MVC");
+        return "insertar";
+    }
 
 }
