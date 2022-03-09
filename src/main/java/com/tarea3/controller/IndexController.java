@@ -37,17 +37,15 @@ public class IndexController {
     @GetMapping("/listar")
     public String listar(Model model) {
         log.info("Arquitectura MVC");
-        
+
         //TRAE TODOS LOS REGISTROS DE LA TABLA DE CLIENTES O LO QUE SE NECESITE
         var productoDB = productoService.getProductos();
         model.addAttribute("productoDB", productoDB);
-        
+
         return "listar";
     }
 
-
     //MAPEO AL LAS OPCIONES DE LA BASE DE DATOS
-   
     @GetMapping("/nuevoProducto")
     public String nuevoProducto(Producto producto) {
         return "insertar";
@@ -56,7 +54,7 @@ public class IndexController {
     @PostMapping("/guardarProducto")
     public String guardarProducto(Producto producto) {
         productoService.save(producto);
-        return "redirect:/";
+        return "redirect:/listar";
     }
 
     @GetMapping("/insertar/{idproducto}")
