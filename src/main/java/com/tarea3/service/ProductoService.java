@@ -6,7 +6,7 @@ import java.util.List;
 public interface ProductoService {
     
     //Nos devuelve todos los producto de la base de datos.
-    public List<Producto> getClientes();
+    public List<Producto> getProductos();
 
     //Si viene el id lo modifica y si no lo agrega
     public void save(Producto producto);
@@ -15,5 +15,5 @@ public interface ProductoService {
     public void delete(Producto producto);
 
     //Lo consiguen
-    public Producto getCliente(Producto producto);
+    public Producto getProducto(Producto producto);
 }

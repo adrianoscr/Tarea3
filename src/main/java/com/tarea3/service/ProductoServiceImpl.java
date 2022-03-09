@@ -16,7 +16,7 @@ public class ProductoServiceImpl implements ProductoService{
     
     @Override
     @Transactional (readOnly = true)
-    public List<Producto> getClientes() {
+    public List<Producto> getProductos() {
         return (List<Producto>) productoDao.findAll();
     }
 
@@ -34,7 +34,7 @@ public class ProductoServiceImpl implements ProductoService{
 
     @Override
     @Transactional (readOnly = true)
-    public Producto getCliente(Producto producto) {
+    public Producto getProducto(Producto producto) {
         return productoDao.findById(producto.getIdproducto()).orElse(producto);
     }
     
