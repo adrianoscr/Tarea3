@@ -18,6 +18,8 @@ public class IndexController {
 
     @Autowired //SI NO EXITEN ESTOS OBJETOS, SE CREA AUTOMÁTICAMENTE UNA INSTANCIA DE ESTOS.
     private ProductoService productoService;
+    
+    @Autowired
     private ClienteService clienteService;
 
     //CON ESTO SE INDICA QUE COMIECE EL INDEX DEL TEMPLATE
@@ -27,13 +29,14 @@ public class IndexController {
 
         return "index";
     }
-
-    //SE INDICA QUE SE USARÁ EL TEMPLATE CON ESE NOMBRE
-    @GetMapping("/contactenos")
-    public String cotactenos(Model model) {
-        log.info("Arquitectura MVC");
-        return "contactenos";
-    }
+//
+//    //SE INDICA QUE SE USARÁ EL TEMPLATE CON ESE NOMBRE
+//    @GetMapping("/contactenos")
+//    public String cotactenos(Model model) {
+//        log.info("Arquitectura MVC");
+//        
+//        return "contactenos";
+//    }
 
     //SE INDICA QUE SE USARÁ EL TEMPLATE CON ESE NOMBRE
     @GetMapping("/listar")
@@ -48,10 +51,8 @@ public class IndexController {
     }
 
     
-    
-    
     //MAPEO AL LAS OPCIONES DE LA BASE DE DATOS PRODUCTOS
-    @GetMapping("/guardarProducto")
+    @GetMapping("/nuevoProducto")
     public String nuevoProducto(Producto producto) {
         return "insertar";
     }
@@ -76,13 +77,18 @@ public class IndexController {
         return "redirect:/listar";
     }
 
-    
-    
+   
     //MAPEO AL LAS OPCIONES DE LA BASE DE DATOS CLIENTES
+    
+    @GetMapping("/nuevoCliente")
+    public String nuevoProducto(Cliente cliente) {
+        return "contactenos";
+    }
+    
     @PostMapping("/guardarCliente")
     public String guardarCliente(Cliente cliente) {
         clienteService.save(cliente);
-        return "redirect:/contactenos";
+        return "redirect:/nuevoCliente";
     }
     
     

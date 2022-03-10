@@ -39,28 +39,28 @@
 
             <div class="parrafos">
 
-                <div class="titulos">CONTACTE CON NUESTRO SERVICIO AL CLIENTE</div>
+                <h1 class="titulos">CONTACTE CON NUESTRO SERVICIO AL CLIENTE</h1>
 
                 <br>
                 <br>
                 <form th:action="@{/guardarCliente}"
                       method="post"
                       th:object="${cliente}">
-                    
+
                     <input type="hidden" name="idcliente" th:field="*{idcliente}" />
 
                     <label for="nombre">NOMBRE:    </label>
                     <input type="text" name="nombre" th:field="*{nombre}" /><br><br>
-                    
+
                     <label for="apellidos">APELLIDOS: </label>
-                    <input type="text" name="apellidos" placeholder="" th:field="*{apellidos}" /><br><br>
-                    
+                    <input type="text" name="apellidos" th:field="*{apellidos}" /><br><br>
+
                     <label for="correo">CORREO:    </label>
-                    <input type="email" name="correo" placeholder="" th:field="*{correo}" /><br><br>
-                    
+                    <input type="email" name="correo" th:field="*{correo}" /><br><br>
+
                     <label for="telefono">TELEFONO:  </label>
-                    <input type="tel" name="telefono" placeholder="" th:field="*{telefono}" /><br><br>
-                    
+                    <input type="tel" name="telefono" th:field="*{telefono}" /><br><br>
+
                     <label for="solicitud">SOLICITUD: </label>
                     <textarea name="solicitud" rows="6" cols="110" th:field="*{solicitud}" ></textarea><br><br>
 

@@ -24,7 +24,7 @@
 
             <section class="contenidoGeneral">
                 <br>
-                <a th:href="@{/guardarProducto}">Insertar nuevo producto</a>
+                <a th:href="@{/nuevoProducto}">Insertar nuevo producto</a>
                 <br>
                 <br>
                 <div th:if="${productoDB != null and !productoDB.empty}">
@@ -36,6 +36,7 @@
                             <td> Stock </td>
                             <td> Descuento </td>
                             <td> Precio </td>
+
                         </tr>
                         <tr th:each="item : ${productoDB}">
                             <td th:text="${item.nombre}"></td>
