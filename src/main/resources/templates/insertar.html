@@ -10,10 +10,6 @@
     </head>
     <body>
 
-        <nav>
-
-        </nav>
-
         <header th:replace="layout/plantilla :: header">
 
         </header>
@@ -30,32 +26,39 @@
             <form id="centro" th:action="@{/guardarProducto}"
                   method="post"
                   th:object="${producto}">
+                
                 <input type="hidden" name="idproducto" th:field="*{idproducto}" />
                 <label for="nombre">Nombre: </label>
                 <input type="text" name="nombre" th:field="*{nombre}" />
                 <br>
                 <br>
+                
                 <label for="marca">Marca: </label>
                 <input type="text" name="marca" th:field="*{marca}" />
                 <br>
                 <br>
+                
                 <label for="correo">Descripcion: </label>
                 <input type="text" name="descripcion" th:field="*{descripcion}" />
                 <br>
                 <br>
+                
                 <label for="stock">Stock: </label>
                 <input type="text" name="stock" th:field="*{stock}" />
                 <br>
                 <br>
+                
                 <label for="stock">Descuento: </label>
                 <input type="text" name="descuento" th:field="*{descuento}" />
                 <br>
                 <br>
+                
                 <label for="stock">Precio: </label>
                 <input type="text" name="precio" th:field="*{precio}" />
                 <br>
                 <br>
                 <br>
+                
                 <input type="submit" name="guardar" value="Guardar Producto" />
             </form>
         </section>

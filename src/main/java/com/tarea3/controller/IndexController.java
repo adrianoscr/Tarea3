@@ -1,8 +1,9 @@
 package com.tarea3.controller;
 
+import com.tarea3.domain.Cliente;
 import com.tarea3.domain.Producto;
+import com.tarea3.service.ClienteService;
 import com.tarea3.service.ProductoService;
-import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,8 +16,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Slf4j
 public class IndexController {
 
-    @Autowired
+    @Autowired //SI NO EXITEN ESTOS OBJETOS, SE CREA AUTOMÁTICAMENTE UNA INSTANCIA DE ESTOS.
     private ProductoService productoService;
+    private ClienteService clienteService;
 
     //CON ESTO SE INDICA QUE COMIECE EL INDEX DEL TEMPLATE
     @GetMapping("/")
@@ -40,13 +42,16 @@ public class IndexController {
 
         //TRAE TODOS LOS REGISTROS DE LA TABLA DE CLIENTES O LO QUE SE NECESITE
         var productoDB = productoService.getProductos();
-        model.addAttribute("productoDB", productoDB);
+        model.addAttribute("productoDB", productoDB); //EL QUE ESTA ENTRE LAS COMILLAS ES EL QUE HAY QUE PONER EN EL HTML
 
         return "listar";
     }
 
-    //MAPEO AL LAS OPCIONES DE LA BASE DE DATOS
-    @GetMapping("/nuevoProducto")
+    
+    
+    
+    //MAPEO AL LAS OPCIONES DE LA BASE DE DATOS PRODUCTOS
+    @GetMapping("/guardarProducto")
     public String nuevoProducto(Producto producto) {
         return "insertar";
     }
@@ -58,7 +63,7 @@ public class IndexController {
     }
 
     @GetMapping("/insertar/{idproducto}")
-    public String modificarCliente(Producto producto, Model model) {
+    public String modificarProducto(Producto producto, Model model) {
 
         var respuesta = productoService.getProducto(producto);
         model.addAttribute("producto", respuesta);
@@ -66,9 +71,20 @@ public class IndexController {
     }
 
     @GetMapping("/eliminarProducto/{idproducto}")
-    public String eliminarCliente(Producto producto) {
+    public String eliminarProducto(Producto producto) {
         productoService.delete(producto);
-        return "redirect:/";
+        return "redirect:/listar";
     }
+
+    
+    
+    //MAPEO AL LAS OPCIONES DE LA BASE DE DATOS CLIENTES
+    @PostMapping("/guardarCliente")
+    public String guardarCliente(Cliente cliente) {
+        clienteService.save(cliente);
+        return "redirect:/contactenos";
+    }
+    
+    
 
 }

@@ -15,8 +15,6 @@
 
 
         <header th:replace="layout/plantilla :: header">
-            
-<!--            <h1 class="titulos">CONTACTENOS</h1>-->
 
         </header>
 
@@ -40,18 +38,37 @@
                 personalmente.</p>
 
             <div class="parrafos">
-                <ol>
 
-                    <li><strong>Nombre de la empresa:</strong> </li>
-                    <li><strong>Teléfono de la empresa:</strong> </li>
-                    <li><strong>Correo electrónico de la empresa:</strong> </li>
-                    <li><strong>Dirección de la tienda:</strong> </li>
+                <div class="titulos">CONTACTE CON NUESTRO SERVICIO AL CLIENTE</div>
 
-                </ol>
+                <br>
+                <br>
+                <form th:action="@{/guardarCliente}"
+                      method="post"
+                      th:object="${cliente}">
+                    
+                    <input type="hidden" name="idcliente" th:field="*{idcliente}" />
 
+                    <label for="nombre">NOMBRE:    </label>
+                    <input type="text" name="nombre" th:field="*{nombre}" /><br><br>
+                    
+                    <label for="apellidos">APELLIDOS: </label>
+                    <input type="text" name="apellidos" placeholder="" th:field="*{apellidos}" /><br><br>
+                    
+                    <label for="correo">CORREO:    </label>
+                    <input type="email" name="correo" placeholder="" th:field="*{correo}" /><br><br>
+                    
+                    <label for="telefono">TELEFONO:  </label>
+                    <input type="tel" name="telefono" placeholder="" th:field="*{telefono}" /><br><br>
+                    
+                    <label for="solicitud">SOLICITUD: </label>
+                    <textarea name="solicitud" rows="6" cols="110" th:field="*{solicitud}" ></textarea><br><br>
+
+                    <input type="submit" name="ENVIAR" value="ENVIAR"><br><br>
+
+                </form>
 
             </div>
-
 
         </section>
 

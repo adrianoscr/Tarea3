@@ -24,7 +24,7 @@
 
             <section class="contenidoGeneral">
                 <br>
-                <a th:href="@{/nuevoProducto}">Insertar nuevo producto</a>
+                <a th:href="@{/guardarProducto}">Insertar nuevo producto</a>
                 <br>
                 <br>
                 <div th:if="${productoDB != null and !productoDB.empty}">
@@ -44,7 +44,7 @@
                             <td th:text="${item.stock}"></td>
                             <td th:text="${item.descuento}"></td>
                             <td th:text="${item.precio}"></td>
-                            <td> <a th:href="@{/modificarProducto/} + ${item.idproducto}">Modificar</a></td>
+                            <td> <a th:href="@{/insertar/} + ${item.idproducto}">Modificar</a></td>
                             <td> <a th:href="@{/eliminarProducto/} + ${item.idproducto}">Eliminar</a></td>
                     </table>
                 </div>
